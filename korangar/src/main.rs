@@ -41,7 +41,7 @@ use std::net::{SocketAddr, ToSocketAddrs};
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, LazyLock};
 
-use cgmath::{Point3, Vector2, Vector3};
+use cgmath::{EuclideanSpace, Point3, Vector2, Vector3, Zero};
 #[cfg(feature = "debug")]
 use graphics::RenderSettings;
 use image::{EncodableLayout, ImageFormat, ImageReader};
@@ -1270,7 +1270,7 @@ impl Client {
                     self.effect_holder.add_effect(Box::new(EffectWithLight::new(
                         effect,
                         frame_timer,
-                        EffectCenter::Entity(entity_id, Point3::new(0.0, 0.0, 0.0)),
+                        EffectCenter::Entity(entity_id, Point3::origin()),
                         Vector3::new(0.0, 9.0, 0.0),
                         // FIX: The point light ID needs to be unique.
                         // The point light manager uses the ID to decide which point light
@@ -1299,7 +1299,7 @@ impl Client {
                                     effect,
                                     frame_timer,
                                     EffectCenter::Position(position),
-                                    Vector3::new(0.0, 0.0, 0.0),
+                                    Vector3::zero(),
                                     PointLightId::new(unit_id as u32),
                                     Vector3::new(0.0, 6.0, 0.0),
                                     Color::rgb_u8(255, 30, 0),
@@ -1320,7 +1320,7 @@ impl Client {
                                     effect,
                                     frame_timer,
                                     EffectCenter::Position(position),
-                                    Vector3::new(0.0, 0.0, 0.0),
+                                    Vector3::zero(),
                                     PointLightId::new(unit_id as u32),
                                     Vector3::new(0.0, 6.0, 0.0),
                                     Color::rgb_u8(83, 220, 108),

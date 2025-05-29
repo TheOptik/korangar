@@ -3,7 +3,7 @@ use std::sync::Arc;
 
 #[cfg(feature = "debug")]
 use cgmath::Point3;
-use cgmath::{EuclideanSpace, Vector2};
+use cgmath::{EuclideanSpace, Vector2, Zero};
 use korangar_interface::application::FontSizeTraitExt;
 
 use crate::graphics::{Color, RectangleInstruction, Texture};
@@ -79,7 +79,7 @@ impl SpriteRenderer for GameInterfaceRenderer {
             height: screen_size.height / self.window_size.height,
         };
 
-        let texture_position = Vector2::new(0.0, 0.0);
+        let texture_position = Vector2::zero();
         let texture_size = Vector2::new(1.0, 1.0);
 
         self.instructions.borrow_mut().push(RectangleInstruction::Sdf {
@@ -320,7 +320,7 @@ impl MarkerRenderer for GameInterfaceRenderer {
                 screen_position,
                 screen_size,
                 color,
-                texture_position: Vector2::new(0.0, 0.0),
+                texture_position: Vector2::zero(),
                 texture_size: Vector2::new(1.0, 1.0),
                 texture: texture.clone(),
             });

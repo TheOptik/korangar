@@ -1,4 +1,4 @@
-use cgmath::{Deg, Matrix4, Point3, Vector2, Vector3, Zero};
+use cgmath::{Deg, EuclideanSpace, Matrix4, Point3, Vector2, Vector3, Zero};
 
 use super::Camera;
 use crate::graphics::perspective_reverse_lh;
@@ -17,7 +17,7 @@ pub struct PointShadowCamera {
 impl PointShadowCamera {
     pub fn new() -> Self {
         Self {
-            camera_position: Point3::new(0.0, 0.0, 0.0),
+            camera_position: Point3::origin(),
             view_direction: Vector3::unit_x(),
             look_up_vector: Vector3::unit_y(),
             view_matrix: Matrix4::zero(),

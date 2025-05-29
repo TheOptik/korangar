@@ -522,7 +522,7 @@ impl Common {
                 [
                     Vector2::new(0.0, 1.0),
                     Vector2::new(1.0, 1.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(1.0, 0.0),
                 ],
                 0,
@@ -534,7 +534,7 @@ impl Common {
         match delta {
             Vector2 { x: 1, y: 0 } => (
                 [
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(1.0, 0.0),
                     Vector2::new(0.0, 1.0),
                     Vector2::new(1.0, 1.0),
@@ -544,7 +544,7 @@ impl Common {
             Vector2 { x: -1, y: 0 } => (
                 [
                     Vector2::new(1.0, 0.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(1.0, 1.0),
                     Vector2::new(0.0, 1.0),
                 ],
@@ -552,7 +552,7 @@ impl Common {
             ),
             Vector2 { x: 0, y: 1 } => (
                 [
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(0.0, 1.0),
                     Vector2::new(1.0, 0.0),
                     Vector2::new(1.0, 1.0),
@@ -563,7 +563,7 @@ impl Common {
                 [
                     Vector2::new(1.0, 0.0),
                     Vector2::new(1.0, 1.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(0.0, 1.0),
                 ],
                 1,
@@ -571,7 +571,7 @@ impl Common {
             Vector2 { x: 1, y: 1 } => (
                 [
                     Vector2::new(0.0, 1.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(1.0, 1.0),
                     Vector2::new(1.0, 0.0),
                 ],
@@ -579,7 +579,7 @@ impl Common {
             ),
             Vector2 { x: -1, y: 1 } => (
                 [
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(0.0, 1.0),
                     Vector2::new(1.0, 0.0),
                     Vector2::new(1.0, 1.0),
@@ -591,7 +591,7 @@ impl Common {
                     Vector2::new(1.0, 1.0),
                     Vector2::new(1.0, 0.0),
                     Vector2::new(0.0, 1.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                 ],
                 2,
             ),
@@ -599,7 +599,7 @@ impl Common {
                 [
                     Vector2::new(1.0, 0.0),
                     Vector2::new(1.0, 1.0),
-                    Vector2::new(0.0, 0.0),
+                    Vector2::zero(),
                     Vector2::new(0.0, 1.0),
                 ],
                 2,
